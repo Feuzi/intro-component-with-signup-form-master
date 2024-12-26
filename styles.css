@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+    --blue: hsl(248, 32%, 49%);
+    --dark-blue: hsl(249, 10%, 26%);
+    --grayish-blue: hsl(246, 25%, 77%);
+}
+
+body {
+    background: url("./images/bg-intro-mobile.png") var(--red);
+    color: #fff;
+    font-family: "Poppins", serif;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+.signup {
+    padding: 0 1.5rem;
+    margin: 0 auto;
+    max-width: 70rem;
+    text-align: center;
+}
+
+.signup-info {
+    margin: 5.5rem 0 4rem;
+}
+
+.signup-info h1 {
+    font-size: clamp(1.7rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.signup-info p {
+    max-width: 31rem;
+    margin: 0 auto;
+}
+
+.signup-center {
+    display: grid;
+    place-content: center;
+    row-gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.signup-trial {
+    background: var(--blue);
+    color: #fff;
+    padding: 1.25rem 3rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 1px rgb(0, 0, 0, 0.15);
+}
+
+.signup-form-input,
+.submit-btn {
+    font-family: inherit;
+}
+
+#signup-form {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 1px rgb(0, 0, 0, 0.15);
+}
+
+#signup-form fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.signup-form-input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--grayish-blue);
+    border-radius: 0.25rem;
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+.signup-form-input::placeholder {
+    color: grey;
+    font-weight: 600;
+}
+
+.signup-form-input:focus {
+    border-color: var(--blue);
+    outline: 1px solid var(--blue);
+}
+
+.signup-form-input::selection {
+    background-color: var(--grayish-blue);
+}
+
+.submit-btn {
+    background: var(--green);
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 3px 1px rgb(55, 153, 112);
+    transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    opacity: 0.7;
+    transform: scale(0.99);
+}
+
+.terms-and-services {
+    color: var(--grayish-blue);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0 1rem;
+}
+
+.terms-and-services a {
+    color: var(--red);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.form-alert {
+    display: none;
+    cursor: default;
+}
+
+.signup-form-input:user-invalid + .form-alert {
+    display: block;
+    color: var(--red);
+    text-align: end;
+    font-size: 0.6rem;
+    font-weight: 600;
+    font-style: italic;
+    margin-top: 0.4rem;
+}
+
+.signup-form-input:user-invalid {
+    border-color: var(--red);
+    color: var(--red);
+    background: url("./images/icon-error.svg") no-repeat 92.5%;
+}
+
+.signup-form-input:user-invalid:focus {
+    outline-color: var(--red);
+}
+
+.signup-form-input:user-invalid::placeholder {
+    color: transparent;
+}
+
+@media screen and (min-width: 768px) {
+    .body {
+        background: url("./images/bg-intro-desktop.png") var(--red);
+    }
+    .signup {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        column-gap: 2rem;
+        padding: 0 2rem;
+    }
+    .signup-info {
+        text-align: start;
+    }
+}
